@@ -77,6 +77,8 @@ fn main() {
 
 }
 
+
+/// Stores the task in the DB
 fn add_to_db(todo: &str) {
     // Open the database from file
     let conn = Connection::open("./sqlite/todo_list.db");
@@ -87,6 +89,7 @@ fn add_to_db(todo: &str) {
 
 }
 
+/// Collects the data stored in the DB and prints it out in a list
 fn read_from_db() {
     // Open the database from file
     let conn = Connection::open("./sqlite/todo_list.db").unwrap();
@@ -110,6 +113,7 @@ fn read_from_db() {
 
 }
 
+/// Removes the selected task from the DB
 fn delete_from_db(task_number: i32) {
     // Open the database
     let conn = Connection::open("./sqlite/todo_list.db");
